@@ -1321,19 +1321,6 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
   return (
     <div className="auth-page">
       <div className="auth-art">
-        {/* Full-bleed Dusk Campus with Illuminated Path Backdrop */}
-        <div className="auth-art-backdrop" aria-hidden="true">
-          <img
-            src="/assets/auth-campus-dusk-4k.jpg"
-            alt="Collegiate Campus Illuminated Pathway at Twilight"
-            className="auth-art-bg-img"
-            onError={(e) => {
-              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
-            }}
-          />
-          <div className="auth-art-overlay" />
-        </div>
-
         <button className="brand" onClick={onBack} type="button" title="Back to home">
           <CampusFixLogo theme="dark" size="large" showTagline />
         </button>
@@ -1355,8 +1342,22 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
           <span>— Aasish, Computer Science</span>
         </div>
 
-        {/* Ambient Subtle Sparkle Accent (as in reference design) */}
-        <div className="auth-art-sparkle" aria-hidden="true">✦</div>
+        {/* Modern Warm University Visual — Bottom-Right Corner Only */}
+        <div className="auth-campus-corner" aria-hidden="true">
+          <img
+            src="/assets/auth-campus-corner-warm.jpg"
+            alt="Modern University Campus Architecture"
+            className="auth-campus-corner-img"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
+            }}
+          />
+          <div className="auth-campus-corner-gradient" />
+          <div className="auth-campus-corner-badge">
+            <span className="corner-badge-dot pulse" />
+            <span>VFSTR Main Campus</span>
+          </div>
+        </div>
       </div>
 
       <section className="auth-form">
