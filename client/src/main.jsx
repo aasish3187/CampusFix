@@ -1321,6 +1321,21 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
   return (
     <div className="auth-page">
       <div className="auth-art">
+        {/* Seamless Blended College Visual in Slide Background */}
+        <div className="auth-campus-blend" aria-hidden="true">
+          <img
+            src="/assets/auth-campus-corner-warm.jpg"
+            alt="Modern University Campus Architecture"
+            className="auth-campus-blend-img"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
+            }}
+          />
+        </div>
+
+        {/* Unified Cosmic Dotted Nebula Layer across the Entire Slide */}
+        <div className="auth-art-nebula" aria-hidden="true" />
+
         <button className="brand" onClick={onBack} type="button" title="Back to home">
           <CampusFixLogo theme="dark" size="large" showTagline />
         </button>
@@ -1340,23 +1355,6 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
         <div className="auth-quote">
           “I can finally see what is happening with the issues I report.”
           <span>— Aasish, Computer Science</span>
-        </div>
-
-        {/* Modern Warm University Visual — Bottom-Right Corner Only */}
-        <div className="auth-campus-corner" aria-hidden="true">
-          <img
-            src="/assets/auth-campus-corner-warm.jpg"
-            alt="Modern University Campus Architecture"
-            className="auth-campus-corner-img"
-            onError={(e) => {
-              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
-            }}
-          />
-          <div className="auth-campus-corner-gradient" />
-          <div className="auth-campus-corner-badge">
-            <span className="corner-badge-dot pulse" />
-            <span>VFSTR Main Campus</span>
-          </div>
         </div>
       </div>
 
