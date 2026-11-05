@@ -1756,10 +1756,6 @@ function PanoramicCampusBanner({ user, onReport }) {
         <div className="panoramic-gradient-overlay" />
       </div>
       <div className="panoramic-content">
-        <div className="panoramic-badge">
-          <span className="live-indicator-dot" />
-          <span>CAMPUS OPERATIONS ACTIVE</span>
-        </div>
         <h1 className="panoramic-title">CampusFix</h1>
         <p className="panoramic-sub">
           Welcome to your campus operations dashboard. Track, resolve, and elevate student campus life.
