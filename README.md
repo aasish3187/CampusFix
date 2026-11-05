@@ -13,12 +13,17 @@
 </p>
 
 <p align="center">
+  <a href="https://campusfix.bytexl.live/"><img src="https://img.shields.io/badge/LIVE%20DEMO-campusfix.bytexl.live-0ea5e9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" /></a>
   <a href="https://github.com/aasish3187/CampusFix/stargazers"><img src="https://img.shields.io/github/stars/aasish3187/CampusFix?style=for-the-badge&logo=github&color=2563eb" alt="Stars" /></a>
   <a href="https://github.com/aasish3187/CampusFix/network/members"><img src="https://img.shields.io/github/forks/aasish3187/CampusFix?style=for-the-badge&logo=github&color=0284c7" alt="Forks" /></a>
   <a href="https://github.com/aasish3187/CampusFix/issues"><img src="https://img.shields.io/github/issues/aasish3187/CampusFix?style=for-the-badge&logo=github&color=10b981" alt="Issues" /></a>
   <a href="https://github.com/aasish3187/CampusFix/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-amber?style=for-the-badge" alt="License" /></a>
   <img src="https://img.shields.io/badge/MERN-Fullstack-6366f1?style=for-the-badge&logo=react" alt="MERN" />
   <img src="https://img.shields.io/badge/Vite-8.3-646cff?style=for-the-badge&logo=vite" alt="Vite" />
+</p>
+
+<p align="center">
+  🚀 <strong>Live Deployment:</strong> <a href="https://campusfix.bytexl.live/"><strong>https://campusfix.bytexl.live/</strong></a>
 </p>
 
 ---
