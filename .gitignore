@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build outputs
+dist/
+build/
+*/dist/
+*/build/
+
+# Environment variables (keep examples only)
+.env
+*/.env
+*.env.local
+
+# Logs
+*.log
+*/vite-error.log
+*/vite-output.log
+
+# Temporary archives
+*.zip
+*.tar.gz
+
+# Playwright & test snapshots
+.playwright-mcp/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
