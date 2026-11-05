@@ -1321,18 +1321,21 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
   return (
     <div className="auth-page">
       <div className="auth-art">
-        {/* Full-bleed Indian Collegiate Campus Backdrop (Blended with Zero Seams) */}
-        <div className="auth-campus-blend" aria-hidden="true">
+        {/* Right-side Collegiate Campus Architecture (Spans Top to Bottom) */}
+        <div className="auth-campus-right-panel" aria-hidden="true">
           <img
-            src="/assets/indian-university-campus-dusk.jpg"
-            alt="Indian University Campus Architecture"
-            className="auth-campus-blend-img"
+            src="/assets/modern-academic-campus-twilight.jpg"
+            alt="Modern Collegiate University Campus"
+            className="auth-campus-right-img"
             onError={(e) => {
               e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
             }}
           />
-          <div className="auth-campus-blend-overlay" />
+          <div className="auth-campus-right-fade" />
         </div>
+
+        {/* Cosmic Dotted Nebula Layer across the Left Slide */}
+        <div className="auth-art-nebula" aria-hidden="true" />
 
         <button className="brand" onClick={onBack} type="button" title="Back to home">
           <CampusFixLogo theme="dark" size="large" showTagline />
@@ -1354,6 +1357,9 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
           “I can finally see what is happening with the issues I report.”
           <span>— Aasish, Computer Science</span>
         </div>
+
+        {/* Subtle Sparkle Accent as in reference */}
+        <div className="auth-art-sparkle" aria-hidden="true">✦</div>
       </div>
 
       <section className="auth-form">
