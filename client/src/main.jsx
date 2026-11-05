@@ -991,8 +991,8 @@ function Landing({ onStart, onOpenDemoHelp }) {
         <section className="hero">
           <div className="hero-campus-backdrop" aria-hidden="true">
             <img
-              src="/assets/vignan-university-seamless.jpg"
-              alt="University Campus Architecture Backdrop"
+              src="/assets/landing-campus-quad-4k.jpg"
+              alt="Collegiate University Quadrangle"
               className="hero-campus-bg-img"
               onError={(e) => {
                 e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
@@ -1321,10 +1321,23 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
   return (
     <div className="auth-page">
       <div className="auth-art">
+        {/* Full-bleed Dusk Campus with Illuminated Path Backdrop */}
+        <div className="auth-art-backdrop" aria-hidden="true">
+          <img
+            src="/assets/auth-campus-dusk-4k.jpg"
+            alt="Collegiate Campus Illuminated Pathway at Twilight"
+            className="auth-art-bg-img"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
+            }}
+          />
+          <div className="auth-art-overlay" />
+        </div>
+
         <button className="brand" onClick={onBack} type="button" title="Back to home">
           <CampusFixLogo theme="dark" size="large" showTagline />
         </button>
-        <div>
+        <div className="auth-art-headline">
           <p className="eyebrow">CAMPUS OPERATIONS, SIMPLIFIED</p>
           <h1>
             Every issue
@@ -1342,22 +1355,8 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
           <span>— Aasish, Computer Science</span>
         </div>
 
-        {/* Ambient College Visual in Down-Right Corner */}
-        <div className="auth-campus-corner" aria-hidden="true">
-          <img
-            src="/assets/vignan-university-seamless.jpg"
-            alt="Vignan University Campus"
-            className="auth-campus-corner-img"
-            onError={(e) => {
-              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
-            }}
-          />
-          <div className="auth-campus-corner-gradient" />
-          <div className="auth-campus-corner-badge">
-            <span className="corner-badge-dot pulse" />
-            <span>VFSTR Main Campus</span>
-          </div>
-        </div>
+        {/* Ambient Subtle Sparkle Accent (as in reference design) */}
+        <div className="auth-art-sparkle" aria-hidden="true">✦</div>
       </div>
 
       <section className="auth-form">
