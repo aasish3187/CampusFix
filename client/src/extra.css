@@ -1785,111 +1785,162 @@ button.outline:hover {
 }
 
 /* =============================================================
-   REPORT A NEW ISSUE HERO CARD (HIGH-FIDELITY IMAGE SUITE)
+   REPORT A NEW ISSUE HERO CARD (4K DIGITAL ARTWORK)
    ============================================================= */
 .student-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1.05fr !important;
+  grid-template-columns: 1.32fr 1.18fr !important;
   gap: 20px !important;
-  align-items: start;
+  align-items: stretch;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .student-grid {
     grid-template-columns: 1fr !important;
   }
 }
 
-.report-issue-image-card {
+.report-issue-pro-card {
   position: relative;
+  background: linear-gradient(135deg, #081430 0%, #0d1e44 45%, #08132c 100%);
   border-radius: 20px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px rgba(8, 20, 48, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   cursor: pointer;
-  box-shadow: 0 12px 32px rgba(11, 26, 60, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
-  background: #091738;
-  display: block;
-  user-select: none;
-  width: 100%;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+  min-height: 210px;
 }
-.report-issue-image-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 18px 42px rgba(11, 26, 60, 0.36);
+.report-issue-pro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(8, 20, 48, 0.38);
+  border-color: rgba(96, 165, 250, 0.35);
 }
-.report-issue-image-card:focus-visible {
+.report-issue-pro-card:focus-visible {
   outline: 3px solid #60a5fa;
   outline-offset: 3px;
 }
-.report-card-media-wrapper {
+
+.report-pro-content {
   position: relative;
-  width: 100%;
-  aspect-ratio: 267 / 130;
-  overflow: hidden;
-  border-radius: 20px;
+  z-index: 2;
+  padding: 24px 10px 24px 26px;
+  flex: 1;
+  max-width: 250px;
 }
-.report-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.report-pro-wrench-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  margin-bottom: 12px;
+  transform: rotate(-8deg);
   transition: transform 0.3s ease;
 }
-.report-issue-image-card:hover .report-card-img {
-  transform: scale(1.02);
+.report-issue-pro-card:hover .report-pro-wrench-badge {
+  transform: rotate(0deg) scale(1.08);
 }
-.report-card-interactive-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.report-pro-title {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.4px;
+  line-height: 1.15;
 }
-.report-card-btn-hotspot {
-  position: absolute;
-  left: 7.2%;
-  bottom: 12.8%;
-  width: 32%;
-  height: 22%;
-  border-radius: 9999px;
+.report-pro-sub {
+  font-size: 12px;
+  color: #93c5fd;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+.report-pro-pill-btn {
   background: #ffffff;
   color: #1d4ed8;
   font-weight: 700;
   font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  gap: 7px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-.report-issue-image-card:hover .report-card-btn-hotspot {
+.report-pro-pill-btn:hover {
   background: #f8fafc;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
-.report-card-btn-hotspot .hotspot-arrow {
+.report-pro-pill-btn .pill-arrow {
   transition: transform 0.2s ease;
 }
-.report-issue-image-card:hover .hotspot-arrow {
+.report-pro-pill-btn:hover .pill-arrow {
   transform: translateX(4px);
 }
+
+.report-pro-image-wrap {
+  position: relative;
+  width: 58%;
+  height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: 0 20px 20px 0;
+}
+.report-pro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.report-issue-pro-card:hover .report-pro-img {
+  transform: scale(1.04);
+}
+.report-pro-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0d1e44 0%, rgba(13, 30, 68, 0.82) 16%, transparent 55%);
+  pointer-events: none;
+}
 @media (max-width: 600px) {
-  .report-card-btn-hotspot {
-    font-size: 11px;
-    gap: 4px;
+  .report-issue-pro-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .report-pro-content {
+    max-width: 100%;
+    padding: 22px 22px 16px;
+  }
+  .report-pro-image-wrap {
+    width: 100%;
+    height: 170px;
+    border-radius: 0 0 20px 20px;
   }
 }
 
 /* =============================================================
-   PANORAMIC CAMPUS LANDSCAPE BANNER
+   PANORAMIC CAMPUS LANDSCAPE BANNER (4K ULTRA-HIGH DEFINITION)
    ============================================================= */
 .campus-panoramic-hero {
   position: relative;
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 24px;
-  min-height: 145px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
-  border: 1px solid rgba(226, 232, 240, 0.7);
-  background: #091738;
+  min-height: 160px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: #08132c;
 }
 .panoramic-backdrop {
   position: absolute;
@@ -1900,18 +1951,22 @@ button.outline:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
+  object-position: center 42%;
   display: block;
+  transition: transform 0.4s ease;
+}
+.campus-panoramic-hero:hover .panoramic-img {
+  transform: scale(1.015);
 }
 .panoramic-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #09132b 0%, #0d1e44 38%, rgba(13, 30, 68, 0.88) 58%, rgba(13, 30, 68, 0.18) 100%);
+  background: linear-gradient(90deg, #09132b 0%, #0d1e44 30%, rgba(13, 30, 68, 0.85) 48%, rgba(13, 30, 68, 0.12) 100%);
 }
 .panoramic-content {
   position: relative;
   z-index: 2;
-  padding: 24px 32px;
+  padding: 26px 34px;
   max-width: 580px;
 }
 .panoramic-badge {

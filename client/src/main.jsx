@@ -1699,7 +1699,7 @@ function StudentIllustrationSvg() {
 function ReportIssueCard({ onReport }) {
   return (
     <article
-      className="report-issue-image-card"
+      className="report-issue-pro-card"
       onClick={onReport}
       role="button"
       tabIndex={0}
@@ -1711,17 +1711,31 @@ function ReportIssueCard({ onReport }) {
       }}
       title="Click to report a new campus issue"
     >
-      <div className="report-card-media-wrapper">
-        <img
-          src="/assets/report-card-hires.png"
-          alt="Report a New Issue - Help us maintain a better campus environment"
-          className="report-card-img"
-        />
-        <div className="report-card-interactive-overlay">
-          <span className="report-card-btn-hotspot">
-            <span>Report Issue</span> <span className="hotspot-arrow">→</span>
-          </span>
+      <div className="report-pro-content">
+        <div className="report-pro-wrench-badge">
+          <Icons.wrench size={22} />
         </div>
+        <h3 className="report-pro-title">Report a New Issue</h3>
+        <p className="report-pro-sub">
+          Help us maintain a better campus environment.
+        </p>
+        <button
+          className="report-pro-pill-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            onReport();
+          }}
+        >
+          <span>Report Issue</span> <span className="pill-arrow">→</span>
+        </button>
+      </div>
+      <div className="report-pro-image-wrap">
+        <img
+          src="/assets/student-issue-hero.jpg"
+          alt="Student Reporting Issue"
+          className="report-pro-img"
+        />
+        <div className="report-pro-img-overlay" />
       </div>
     </article>
   );
@@ -1732,8 +1746,8 @@ function PanoramicCampusBanner({ user, onReport }) {
     <section className="campus-panoramic-hero">
       <div className="panoramic-backdrop">
         <img
-          src="/assets/campus-panoramic-banner.jpg"
-          alt="CampusFix Architecture"
+          src="/assets/university-campus-panoramic.jpg"
+          alt="CampusFix University Campus"
           className="panoramic-img"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
