@@ -1321,20 +1321,18 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
   return (
     <div className="auth-page">
       <div className="auth-art">
-        {/* Seamless Blended College Visual in Slide Background */}
+        {/* Full-bleed Indian Collegiate Campus Backdrop (Blended with Zero Seams) */}
         <div className="auth-campus-blend" aria-hidden="true">
           <img
-            src="/assets/auth-campus-corner-warm.jpg"
-            alt="Modern University Campus Architecture"
+            src="/assets/indian-university-campus-dusk.jpg"
+            alt="Indian University Campus Architecture"
             className="auth-campus-blend-img"
             onError={(e) => {
               e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
             }}
           />
+          <div className="auth-campus-blend-overlay" />
         </div>
-
-        {/* Unified Cosmic Dotted Nebula Layer across the Entire Slide */}
-        <div className="auth-art-nebula" aria-hidden="true" />
 
         <button className="brand" onClick={onBack} type="button" title="Back to home">
           <CampusFixLogo theme="dark" size="large" showTagline />
