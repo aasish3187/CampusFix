@@ -1801,12 +1801,9 @@ button.outline:hover {
 
 .report-issue-pro-card {
   position: relative;
-  background: linear-gradient(135deg, #081430 0%, #0d1e44 45%, #08132c 100%);
+  background: #07132e;
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   box-shadow: 0 12px 32px rgba(8, 20, 48, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.12);
   cursor: pointer;
@@ -1823,11 +1820,38 @@ button.outline:hover {
   outline-offset: 3px;
 }
 
+.report-pro-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.report-pro-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.report-issue-pro-card:hover .report-pro-bg-img {
+  transform: scale(1.03);
+}
+.report-pro-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #07132e 0%, rgba(7, 19, 46, 0.96) 34%, rgba(7, 19, 46, 0.82) 50%, rgba(7, 19, 46, 0.20) 74%, transparent 100%);
+  pointer-events: none;
+}
+
 .report-pro-content {
   position: relative;
   z-index: 2;
-  padding: 24px 10px 24px 26px;
-  flex: 1;
+  padding: 24px 26px;
   max-width: 250px;
 }
 .report-pro-wrench-badge {
@@ -1888,74 +1912,41 @@ button.outline:hover {
   transform: translateX(4px);
 }
 
-.report-pro-image-wrap {
-  position: relative;
-  width: 58%;
-  height: 100%;
-  align-self: stretch;
-  overflow: hidden;
-  border-radius: 0 20px 20px 0;
-}
-.report-pro-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  display: block;
-  transition: transform 0.35s ease;
-}
-.report-issue-pro-card:hover .report-pro-img {
-  transform: scale(1.04);
-}
-.report-pro-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #0d1e44 0%, rgba(13, 30, 68, 0.82) 16%, transparent 55%);
-  pointer-events: none;
-}
 @media (max-width: 600px) {
-  .report-issue-pro-card {
-    flex-direction: column;
-    align-items: stretch;
-  }
   .report-pro-content {
     max-width: 100%;
-    padding: 22px 22px 16px;
-  }
-  .report-pro-image-wrap {
-    width: 100%;
-    height: 170px;
-    border-radius: 0 0 20px 20px;
+    padding: 22px 20px;
   }
 }
 
 /* =============================================================
-   PANORAMIC CAMPUS LANDSCAPE BANNER (VIGNAN UNIVERSITY DAYLIGHT THEME)
+   PANORAMIC CAMPUS LANDSCAPE BANNER (FULL-BLEED SEAMLESS ARCHITECTURE)
    ============================================================= */
 .campus-panoramic-hero {
   position: relative;
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 24px;
-  min-height: 155px;
+  min-height: 170px;
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
   border: 1px solid rgba(191, 219, 254, 0.9);
-  background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 35%, #f8fafc 100%);
+  background: #dbeafe;
 }
 .panoramic-backdrop {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 .panoramic-img {
-  width: 58%;
-  height: 100%;
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: left center;
+  object-position: right center;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -1965,14 +1956,14 @@ button.outline:hover {
 .panoramic-daylight-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 28%, rgba(239, 246, 255, 0.88) 44%, rgba(239, 246, 255, 0.12) 68%, transparent 100%);
+  background: linear-gradient(90deg, #dbeafe 0%, rgba(219, 234, 254, 0.98) 28%, rgba(219, 234, 254, 0.85) 44%, rgba(219, 234, 254, 0.20) 70%, transparent 100%);
   pointer-events: none;
 }
 .daylight-content {
   position: relative;
   z-index: 2;
   padding: 28px 34px !important;
-  max-width: 440px !important;
+  max-width: 480px !important;
 }
 .daylight-title {
   color: #0f172a !important;

@@ -1711,6 +1711,17 @@ function ReportIssueCard({ onReport }) {
       }}
       title="Click to report a new campus issue"
     >
+      <div className="report-pro-backdrop">
+        <img
+          src="/assets/student-issue-card-4k.jpg"
+          alt="Report a New Campus Issue"
+          className="report-pro-bg-img"
+          onError={(e) => {
+            e.currentTarget.src = '/assets/student-issue-hero.jpg';
+          }}
+        />
+        <div className="report-pro-gradient-overlay" />
+      </div>
       <div className="report-pro-content">
         <div className="report-pro-wrench-badge">
           <Icons.wrench size={22} />
@@ -1729,14 +1740,6 @@ function ReportIssueCard({ onReport }) {
           <span>Report Issue</span> <span className="pill-arrow">→</span>
         </button>
       </div>
-      <div className="report-pro-image-wrap">
-        <img
-          src="/assets/student-issue-hero.jpg"
-          alt="Student Reporting Issue"
-          className="report-pro-img"
-        />
-        <div className="report-pro-img-overlay" />
-      </div>
     </article>
   );
 }
@@ -1746,11 +1749,11 @@ function PanoramicCampusBanner({ user, onReport }) {
     <section className="campus-panoramic-hero vignan-daylight-hero">
       <div className="panoramic-backdrop">
         <img
-          src="/assets/vignan-building-clean.png"
+          src="/assets/campus-hero-panoramic-4k.jpg"
           alt="Vignan University (VFSTR) Campus"
           className="panoramic-img"
           onError={(e) => {
-            e.currentTarget.src = '/assets/vignan-university-4k.jpg';
+            e.currentTarget.src = '/assets/vignan-university-seamless.jpg';
           }}
         />
         <div className="panoramic-daylight-gradient" />
