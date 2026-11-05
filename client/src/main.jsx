@@ -989,6 +989,17 @@ function Landing({ onStart, onOpenDemoHelp }) {
       </nav>
       <main>
         <section className="hero">
+          <div className="hero-campus-backdrop" aria-hidden="true">
+            <img
+              src="/assets/vignan-university-seamless.jpg"
+              alt="University Campus Architecture Backdrop"
+              className="hero-campus-bg-img"
+              onError={(e) => {
+                e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
+              }}
+            />
+            <div className="hero-campus-overlay" />
+          </div>
           <div className="hero-copy">
             <p className="eyebrow">A BETTER CAMPUS, ONE FIX AT A TIME</p>
             <h1>
@@ -1329,6 +1340,23 @@ function AuthLogin({ onLogin, onBack, onOpenRegister, onOpenForgot }) {
         <div className="auth-quote">
           “I can finally see what is happening with the issues I report.”
           <span>— Aasish, Computer Science</span>
+        </div>
+
+        {/* Ambient College Visual in Down-Right Corner */}
+        <div className="auth-campus-corner" aria-hidden="true">
+          <img
+            src="/assets/vignan-university-seamless.jpg"
+            alt="Vignan University Campus"
+            className="auth-campus-corner-img"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/campus-hero-panoramic-4k.jpg';
+            }}
+          />
+          <div className="auth-campus-corner-gradient" />
+          <div className="auth-campus-corner-badge">
+            <span className="corner-badge-dot pulse" />
+            <span>VFSTR Main Campus</span>
+          </div>
         </div>
       </div>
 
