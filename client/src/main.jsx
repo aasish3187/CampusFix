@@ -1743,32 +1743,27 @@ function ReportIssueCard({ onReport }) {
 
 function PanoramicCampusBanner({ user, onReport }) {
   return (
-    <section className="campus-panoramic-hero">
+    <section className="campus-panoramic-hero vignan-daylight-hero">
       <div className="panoramic-backdrop">
         <img
-          src="/assets/university-campus-panoramic.jpg"
-          alt="CampusFix University Campus"
+          src="/assets/vignan-building-clean.png"
+          alt="Vignan University (VFSTR) Campus"
           className="panoramic-img"
           onError={(e) => {
-            e.currentTarget.style.display = 'none';
+            e.currentTarget.src = '/assets/vignan-university-4k.jpg';
           }}
         />
-        <div className="panoramic-gradient-overlay" />
+        <div className="panoramic-daylight-gradient" />
       </div>
-      <div className="panoramic-content">
-        <h1 className="panoramic-title">CampusFix</h1>
-        <p className="panoramic-sub">
-          Welcome to your campus operations dashboard. Track, resolve, and elevate student campus life.
+      <div className="panoramic-content daylight-content">
+        <h1 className="panoramic-title daylight-title">Welcome to CampusFix!</h1>
+        <p className="panoramic-sub daylight-sub">
+          Report campus issues easily and track their resolution in real-time.
         </p>
         <div className="panoramic-actions">
-          <button className="panoramic-btn-primary" onClick={onReport}>
-            <Icons.add size={16} />
-            <span>Report a New Issue</span>
+          <button className="panoramic-btn-pill-blue" onClick={onReport}>
+            <span>Report a New Issue</span> <span className="pill-arrow">→</span>
           </button>
-          <div className="panoramic-stat-pill">
-            <span className="stat-glow-green" />
-            <span>Facilities Team On-Duty</span>
-          </div>
         </div>
       </div>
     </section>

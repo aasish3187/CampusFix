@@ -1930,17 +1930,17 @@ button.outline:hover {
 }
 
 /* =============================================================
-   PANORAMIC CAMPUS LANDSCAPE BANNER (4K ULTRA-HIGH DEFINITION)
+   PANORAMIC CAMPUS LANDSCAPE BANNER (VIGNAN UNIVERSITY DAYLIGHT THEME)
    ============================================================= */
 .campus-panoramic-hero {
   position: relative;
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 24px;
-  min-height: 160px;
-  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  background: #08132c;
+  min-height: 155px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 35%, #f8fafc 100%);
 }
 .panoramic-backdrop {
   position: absolute;
@@ -1948,26 +1948,83 @@ button.outline:hover {
   z-index: 1;
 }
 .panoramic-img {
-  width: 100%;
+  width: 58%;
   height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: left center;
   display: block;
   transition: transform 0.4s ease;
 }
 .campus-panoramic-hero:hover .panoramic-img {
-  transform: scale(1.015);
+  transform: scale(1.02);
 }
-.panoramic-gradient-overlay {
+.panoramic-daylight-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #09132b 0%, #0d1e44 30%, rgba(13, 30, 68, 0.85) 48%, rgba(13, 30, 68, 0.12) 100%);
+  background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 28%, rgba(239, 246, 255, 0.88) 44%, rgba(239, 246, 255, 0.12) 68%, transparent 100%);
+  pointer-events: none;
 }
-.panoramic-content {
+.daylight-content {
   position: relative;
   z-index: 2;
-  padding: 26px 34px;
-  max-width: 580px;
+  padding: 28px 34px !important;
+  max-width: 440px !important;
+}
+.daylight-title {
+  color: #0f172a !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  font-family: 'Outfit', sans-serif !important;
+  margin: 0 0 6px !important;
+  letter-spacing: -0.4px !important;
+  line-height: 1.15;
+}
+.daylight-sub {
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  margin: 0 0 18px !important;
+  line-height: 1.5 !important;
+}
+.panoramic-btn-pill-blue {
+  background: #1d4ed8;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.panoramic-btn-pill-blue:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(29, 78, 216, 0.38);
+}
+.panoramic-btn-pill-blue .pill-arrow {
+  transition: transform 0.2s ease;
+}
+.panoramic-btn-pill-blue:hover .pill-arrow {
+  transform: translateX(4px);
+}
+@media (max-width: 768px) {
+  .panoramic-img {
+    width: 100%;
+    opacity: 0.25;
+  }
+  .daylight-content {
+    max-width: 100% !important;
+    padding: 22px !important;
+  }
 }
 .panoramic-badge {
   display: inline-flex;
