@@ -1785,129 +1785,96 @@ button.outline:hover {
 }
 
 /* =============================================================
-   REPORT A NEW ISSUE HERO CARD (WITH STUDENT VECTOR ILLUSTRATION)
+   REPORT A NEW ISSUE HERO CARD (HIGH-FIDELITY IMAGE SUITE)
    ============================================================= */
-.report-issue-hero-card {
-  background: linear-gradient(135deg, #091738 0%, #112658 50%, #0d1e44 100%);
-  border-radius: 20px;
-  padding: 26px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  box-shadow: 0 12px 32px rgba(9, 23, 56, 0.32);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  min-height: 180px;
-}
-.report-issue-hero-card::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  left: -60px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-.report-issue-content {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  max-width: 320px;
-}
-.report-wrench-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+.student-grid {
   display: grid;
-  place-items: center;
-  color: #ffffff;
-  margin-bottom: 14px;
-  transform: rotate(-8deg);
+  grid-template-columns: 1.4fr 1.05fr !important;
+  gap: 20px !important;
+  align-items: start;
+}
+@media (max-width: 1050px) {
+  .student-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.report-issue-image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(11, 26, 60, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+  background: #091738;
+  display: block;
+  user-select: none;
+  width: 100%;
+}
+.report-issue-image-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 42px rgba(11, 26, 60, 0.36);
+}
+.report-issue-image-card:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+}
+.report-card-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 267 / 130;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.report-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
-.report-issue-hero-card:hover .report-wrench-badge {
-  transform: rotate(0deg) scale(1.08);
+.report-issue-image-card:hover .report-card-img {
+  transform: scale(1.02);
 }
-.report-hero-title {
-  font-size: 24px;
-  font-weight: 800;
-  font-family: 'Outfit', sans-serif;
-  color: #ffffff;
-  margin: 0 0 6px;
-  letter-spacing: -0.4px;
+.report-card-interactive-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
-.report-hero-sub {
-  font-size: 13px;
-  color: #93c5fd;
-  margin: 0 0 20px;
-  line-height: 1.5;
-}
-.report-issue-pill-btn {
+.report-card-btn-hotspot {
+  position: absolute;
+  left: 7.2%;
+  bottom: 12.8%;
+  width: 32%;
+  height: 22%;
+  border-radius: 9999px;
   background: #ffffff;
   color: #1d4ed8;
   font-weight: 700;
   font-size: 13px;
-  padding: 11px 24px;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.report-issue-pill-btn:hover {
+.report-issue-image-card:hover .report-card-btn-hotspot {
   background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
-.report-issue-pill-btn .pill-arrow {
+.report-card-btn-hotspot .hotspot-arrow {
   transition: transform 0.2s ease;
 }
-.report-issue-pill-btn:hover .pill-arrow {
+.report-issue-image-card:hover .hotspot-arrow {
   transform: translateX(4px);
 }
-
-.report-illustration-wrap {
-  width: 240px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-}
-.student-illu-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
-}
-.illu-bubble-group {
-  animation: cfBubbleFloat 3s ease-in-out infinite alternate;
-}
-@keyframes cfBubbleFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-4px); }
-}
-
-@media (max-width: 768px) {
-  .report-issue-hero-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .report-illustration-wrap {
-    align-self: center;
-    width: 200px;
-    height: 130px;
+@media (max-width: 600px) {
+  .report-card-btn-hotspot {
+    font-size: 11px;
+    gap: 4px;
   }
 }
 

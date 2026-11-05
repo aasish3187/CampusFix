@@ -1698,21 +1698,32 @@ function StudentIllustrationSvg() {
 
 function ReportIssueCard({ onReport }) {
   return (
-    <section className="report-issue-hero-card">
-      <div className="report-issue-content">
-        <div className="report-wrench-badge">
-          <Icons.wrench size={24} />
+    <article
+      className="report-issue-image-card"
+      onClick={onReport}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onReport();
+        }
+      }}
+      title="Click to report a new campus issue"
+    >
+      <div className="report-card-media-wrapper">
+        <img
+          src="/assets/report-card-hires.png"
+          alt="Report a New Issue - Help us maintain a better campus environment"
+          className="report-card-img"
+        />
+        <div className="report-card-interactive-overlay">
+          <span className="report-card-btn-hotspot">
+            <span>Report Issue</span> <span className="hotspot-arrow">→</span>
+          </span>
         </div>
-        <h3 className="report-hero-title">Report a New Issue</h3>
-        <p className="report-hero-sub">Help us maintain a better campus environment.</p>
-        <button className="report-issue-pill-btn" onClick={onReport}>
-          <span>Report Issue</span> <span className="pill-arrow">→</span>
-        </button>
       </div>
-      <div className="report-illustration-wrap">
-        <StudentIllustrationSvg />
-      </div>
-    </section>
+    </article>
   );
 }
 
