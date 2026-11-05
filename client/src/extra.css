@@ -1613,3 +1613,463 @@ button.outline:hover {
 .auth-art .brand {
   padding: 0 !important;
 }
+
+/* =============================================================
+   MODERN DASHBOARD SUITE: WAVE METRICS, HERO ILLUSTRATION & PANORAMA
+   ============================================================= */
+
+/* 4-column Modern Metrics Grid */
+.student-metrics-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1100px) {
+  .student-metrics-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .student-metrics-4col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern Wave Metric Card */
+.metric.metric-modern {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 20px 14px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.metric.metric-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* Color tints */
+.metric.metric-modern.tone-blue {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+  border: 1px solid #dbeafe;
+}
+.metric.metric-modern.tone-green {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid #dcfce7;
+}
+.metric.metric-modern.tone-orange {
+  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
+  border: 1px solid #ffedd5;
+}
+.metric.metric-modern.tone-purple {
+  background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+  border: 1px solid #f3e8ff;
+}
+
+/* Header inside metric */
+.metric-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.metric.metric-modern .metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.metric.metric-modern:hover .metric-icon {
+  transform: scale(1.08);
+}
+.metric.metric-modern .metric-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+.metric.metric-modern .metric-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.metric.metric-modern .metric-icon.orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+.metric.metric-modern .metric-icon.purple {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.metric-primary {
+  display: flex;
+  flex-direction: column;
+}
+.metric-val {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.metric-lbl {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 4px 0 0 0;
+  white-space: nowrap;
+}
+
+/* Trend badge pill (↑ 12%, ↑ 8%, ↓ 1%, etc.) */
+.metric-trend-pill {
+  margin-left: auto;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  line-height: 1;
+}
+.metric-trend-pill.trend-up {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+.metric-trend-pill.trend-down {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+.metric-trend-pill.trend-neutral {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-footnote {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+/* SVG Wave Sparkline at bottom */
+.metric-wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.metric-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =============================================================
+   REPORT A NEW ISSUE HERO CARD (WITH STUDENT VECTOR ILLUSTRATION)
+   ============================================================= */
+.report-issue-hero-card {
+  background: linear-gradient(135deg, #091738 0%, #112658 50%, #0d1e44 100%);
+  border-radius: 20px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 12px 32px rgba(9, 23, 56, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+}
+.report-issue-hero-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.report-issue-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 320px;
+}
+.report-wrench-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  margin-bottom: 14px;
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease;
+}
+.report-issue-hero-card:hover .report-wrench-badge {
+  transform: rotate(0deg) scale(1.08);
+}
+.report-hero-title {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.4px;
+}
+.report-hero-sub {
+  font-size: 13px;
+  color: #93c5fd;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.report-issue-pill-btn {
+  background: #ffffff;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 11px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.report-issue-pill-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.report-issue-pill-btn .pill-arrow {
+  transition: transform 0.2s ease;
+}
+.report-issue-pill-btn:hover .pill-arrow {
+  transform: translateX(4px);
+}
+
+.report-illustration-wrap {
+  width: 240px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.student-illu-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+.illu-bubble-group {
+  animation: cfBubbleFloat 3s ease-in-out infinite alternate;
+}
+@keyframes cfBubbleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+  .report-issue-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .report-illustration-wrap {
+    align-self: center;
+    width: 200px;
+    height: 130px;
+  }
+}
+
+/* =============================================================
+   PANORAMIC CAMPUS LANDSCAPE BANNER
+   ============================================================= */
+.campus-panoramic-hero {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  min-height: 145px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  background: #091738;
+}
+.panoramic-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.panoramic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+.panoramic-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #09132b 0%, #0d1e44 38%, rgba(13, 30, 68, 0.88) 58%, rgba(13, 30, 68, 0.18) 100%);
+}
+.panoramic-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px 32px;
+  max-width: 580px;
+}
+.panoramic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+.live-indicator-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  display: inline-block;
+}
+.panoramic-title {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.5px;
+}
+.panoramic-sub {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+.panoramic-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.panoramic-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.panoramic-btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+.panoramic-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+}
+.stat-glow-green {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Panel Title with Filter (Image 7) */
+.panel-title-with-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.panel-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel-title-left h2 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  color: #0f172a;
+  margin: 0;
+}
+.panel-bar-icon, .panel-bell-icon {
+  font-size: 16px;
+}
+.overview-time-select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+.overview-time-select:hover {
+  border-color: #cbd5e1;
+}
+.panel-sub-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+.panel-sub-link:hover {
+  text-decoration: underline;
+}
+

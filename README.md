@@ -95,17 +95,17 @@ flowchart TD
   <tr>
     <td width="50%" align="center">
       <h3>🛡️ Facilities Administrator Overview</h3>
-      <a href="./docs/screenshots/admin-dashboard.png">
-        <img src="./docs/screenshots/admin-dashboard.png" alt="Admin Dashboard" width="100%" />
+      <a href="./docs/screenshots/admin_dashboard_modernized.png">
+        <img src="./docs/screenshots/admin_dashboard_modernized.png" alt="Admin Dashboard" width="100%" />
       </a>
-      <p><em>Campus-wide analytics, category distributions, interactive SLA performance charts, and live dispatch.</em></p>
+      <p><em>Panoramic collegiate skyline banner, smooth wave sparkline KPI cards (Total, Resolved, In Progress, Pending), Complaint Overview filter, and live team dispatch.</em></p>
     </td>
     <td width="50%" align="center">
       <h3>🎓 Student Reporting Workspace</h3>
-      <a href="./docs/screenshots/student-dashboard.png">
-        <img src="./docs/screenshots/student-dashboard.png" alt="Student Dashboard" width="100%" />
+      <a href="./docs/screenshots/student_dashboard_modernized.png">
+        <img src="./docs/screenshots/student_dashboard_modernized.png" alt="Student Dashboard" width="100%" />
       </a>
-      <p><em>Personal reported issues, active queue status, resolution badges, and quick-report navigation.</em></p>
+      <p><em>Hero "Report a New Issue" card with student vector illustration, live status metrics with area waves, and real-time report tracker.</em></p>
     </td>
   </tr>
   <tr>

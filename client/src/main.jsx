@@ -101,6 +101,16 @@ const Icons = {
     <svg width={props?.size || 14} height={props?.size || 14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={props?.className || ''}>
       <polyline points="9 18 15 12 9 6" />
     </svg>
+  ),
+  alert: (props) => (
+    <svg width={props?.size || 18} height={props?.size || 18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={props?.className || ''}>
+      <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+    </svg>
+  ),
+  wrench: (props) => (
+    <svg width={props?.size || 18} height={props?.size || 18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={props?.className || ''}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
   )
 };
 
@@ -798,6 +808,7 @@ function App() {
               />
             ) : (
               <AdminDashboard
+                user={currentUser}
                 tickets={ticketList}
                 onOpen={openTicket}
                 onPage={go}
@@ -1633,58 +1644,167 @@ function ForgotModal({ onClose }) {
 }
 
 // -------------------------------------------------------------
+// STUDENT & HERO ILLUSTRATION COMPONENTS
+// -------------------------------------------------------------
+function StudentIllustrationSvg() {
+  return (
+    <svg viewBox="0 0 260 170" className="student-illu-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Blue chair */}
+      <rect x="180" y="55" width="34" height="75" rx="17" fill="#1d4ed8" />
+      <rect x="168" y="85" width="56" height="45" rx="10" fill="#2563eb" />
+      
+      {/* Speech alert bubble with ! */}
+      <g className="illu-bubble-group">
+        <circle cx="196" cy="30" r="15" fill="#ffffff" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.25))" />
+        <path d="M191 42 L187 47 L197 43 Z" fill="#ffffff" />
+        <rect x="194.5" y="21" width="3" height="10" rx="1.5" fill="#1d4ed8" />
+        <circle cx="196" cy="35" r="1.6" fill="#1d4ed8" />
+      </g>
+
+      {/* Student body & yellow hoodie */}
+      <g className="illu-student-group">
+        <rect x="142" y="66" width="14" height="16" fill="#f6ad55" rx="3" />
+        <ellipse cx="149" cy="52" rx="15" ry="17" fill="#fbd38d" />
+        <circle cx="163" cy="54" r="4" fill="#fbd38d" />
+        <ellipse cx="155" cy="51" rx="1.8" ry="2.2" fill="#0f172a" />
+        <path d="M158 55 Q156 59 153 58" stroke="#dd6b20" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        <path d="M151 62 Q155 65 158 62" stroke="#c05621" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+        <path d="M134 48 C134 37 145 31 159 34 C167 37 170 43 168 50 C166 47 162 43 155 44 C146 45 141 49 134 48 Z" fill="#0f172a" />
+        <path d="M136 48 C132 57 139 63 141 63 C140 58 139 53 141 50 Z" fill="#0f172a" />
+
+        <path d="M126 84 C133 75 141 71 149 71 C157 71 166 75 173 84 L185 130 C185 130 171 140 149 140 C127 140 114 130 114 130 L126 84 Z" fill="#f59e0b" />
+        <path d="M135 75 C140 82 158 82 163 75 C166 82 162 90 149 90 C136 90 132 82 135 75 Z" fill="#d97706" />
+        <line x1="144" y1="87" x2="143" y2="108" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+        <line x1="154" y1="87" x2="155" y2="108" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+
+        <path d="M123 90 L96 120 C96 120 102 126 110 125 L133 105 Z" fill="#fbbf24" />
+        <path d="M172 90 L151 124 L138 120 L161 95 Z" fill="#d97706" />
+        <circle cx="97" cy="123" r="5.5" fill="#fbd38d" />
+        <circle cx="138" cy="123" r="5.5" fill="#fbd38d" />
+      </g>
+
+      {/* Dark modern desk & laptop */}
+      <g className="illu-desk-laptop">
+        <rect x="15" y="132" width="225" height="7" rx="3.5" fill="#0b172e" />
+        <polygon points="48,72 114,72 110,123 42,123" fill="#1e293b" />
+        <polygon points="51,75 111,75 108,120 46,120" fill="#0f172a" />
+        <circle cx="78" cy="96" r="3.8" fill="#60a5fa" opacity="0.85" />
+        <polygon points="38,123 120,123 130,132 28,132" fill="#334155" />
+        <line x1="52" y1="127" x2="108" y2="127" stroke="#64748b" strokeWidth="1.2" strokeLinecap="round" />
+      </g>
+    </svg>
+  );
+}
+
+function ReportIssueCard({ onReport }) {
+  return (
+    <section className="report-issue-hero-card">
+      <div className="report-issue-content">
+        <div className="report-wrench-badge">
+          <Icons.wrench size={24} />
+        </div>
+        <h3 className="report-hero-title">Report a New Issue</h3>
+        <p className="report-hero-sub">Help us maintain a better campus environment.</p>
+        <button className="report-issue-pill-btn" onClick={onReport}>
+          <span>Report Issue</span> <span className="pill-arrow">→</span>
+        </button>
+      </div>
+      <div className="report-illustration-wrap">
+        <StudentIllustrationSvg />
+      </div>
+    </section>
+  );
+}
+
+function PanoramicCampusBanner({ user, onReport }) {
+  return (
+    <section className="campus-panoramic-hero">
+      <div className="panoramic-backdrop">
+        <img
+          src="/assets/campus-panoramic-banner.jpg"
+          alt="CampusFix Architecture"
+          className="panoramic-img"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+          }}
+        />
+        <div className="panoramic-gradient-overlay" />
+      </div>
+      <div className="panoramic-content">
+        <div className="panoramic-badge">
+          <span className="live-indicator-dot" />
+          <span>CAMPUS OPERATIONS ACTIVE</span>
+        </div>
+        <h1 className="panoramic-title">CampusFix</h1>
+        <p className="panoramic-sub">
+          Welcome to your campus operations dashboard. Track, resolve, and elevate student campus life.
+        </p>
+        <div className="panoramic-actions">
+          <button className="panoramic-btn-primary" onClick={onReport}>
+            <Icons.add size={16} />
+            <span>Report a New Issue</span>
+          </button>
+          <div className="panoramic-stat-pill">
+            <span className="stat-glow-green" />
+            <span>Facilities Team On-Duty</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
 // STUDENT DASHBOARD
 // -------------------------------------------------------------
 function StudentDashboard({ user, tickets, onOpen, onPage }) {
   const activeReports = tickets.filter((t) => !['Resolved', 'Closed'].includes(t.status));
-  const awaitingReview = tickets.filter((t) => t.status === 'Submitted');
+  const awaitingReview = tickets.filter((t) => t.status === 'Submitted' || t.status === 'Under Review');
+  const inProgressReports = tickets.filter((t) => t.status === 'In Progress');
   const resolvedReports = tickets.filter((t) => ['Resolved', 'Closed'].includes(t.status));
+  const totalComplaints = tickets.length;
 
   const needsFeedback = resolvedReports.length > 0;
 
   return (
     <>
-      <section className="student-welcome">
-        <div>
-          <span className="welcome-icon">
-            <Icons.spark size={20} />
-          </span>
-          <h2>Thank you for helping keep our campus in top shape.</h2>
-          <p>
-            You have <b>{activeReports.length} active complaints</b> in the system. Facilities is
-            actively addressing them.
-          </p>
-        </div>
-        <button className="primary" onClick={() => onPage('report')}>
-          <span>+</span> Report an issue
-        </button>
-      </section>
+      {/* Collegiate Panoramic Campus Banner (Image 6) */}
+      <PanoramicCampusBanner user={user} onReport={() => onPage('report')} />
 
-      <div className="metrics student-metrics">
+      {/* 4 Modern Wave KPI Cards (Image 7) */}
+      <div className="metrics student-metrics-4col">
         <Metric
-          icon={<Icons.dashboard size={18} />}
+          icon={<Icons.tickets size={20} />}
           tone="blue"
-          label="My active reports"
-          value={activeReports.length}
-          change={activeReports.length ? 'Active' : 'All clear'}
-          detail="in resolution queue"
+          label="Total Complaints"
+          value={totalComplaints}
+          change="↑ 12%"
+          detail="All submitted reports"
         />
         <Metric
-          icon={<Icons.clock size={18} />}
-          tone="orange"
-          label="Awaiting assignment"
-          value={awaitingReview.length}
-          change={awaitingReview.length}
-          detail="reviewing by facilities"
-          warn={awaitingReview.length > 0}
-        />
-        <Metric
-          icon={<Icons.check size={18} />}
+          icon={<Icons.check size={20} />}
           tone="green"
-          label="Resolved issues"
+          label="Resolved"
           value={resolvedReports.length}
-          change={resolvedReports.length ? 'Completed' : ''}
-          detail="thank you for reporting"
+          change="↑ 8%"
+          detail="Completed fixes"
+        />
+        <Metric
+          icon={<Icons.clock size={20} />}
+          tone="orange"
+          label="In Progress"
+          value={inProgressReports.length}
+          change="↓ 1%"
+          detail="Technicians on-site"
+        />
+        <Metric
+          icon={<Icons.alert size={20} />}
+          tone="purple"
+          label="Pending"
+          value={awaitingReview.length}
+          change="↓ 0%"
+          detail="Awaiting review"
+          warn={awaitingReview.length > 0}
         />
       </div>
 
@@ -1709,17 +1829,8 @@ function StudentDashboard({ user, tickets, onOpen, onPage }) {
           </div>
         </section>
 
-        <section className="panel next-step">
-          <span>
-            <Icons.spark size={22} />
-          </span>
-          <h3>Real-time transparency</h3>
-          <p>
-            Whenever a technician starts work or completes a repair, you will receive an in-app
-            notification with full details.
-          </p>
-          <button onClick={() => onPage('report')}>Report another issue →</button>
-        </section>
+        {/* Upgraded Hero Report Issue Card (Image 4) */}
+        <ReportIssueCard onReport={() => onPage('report')} />
       </div>
 
       {needsFeedback && (
@@ -1766,34 +1877,34 @@ function StaffDashboard({ user, tickets, onOpen, onPage }) {
         </button>
       </section>
 
-      <div className="metrics">
+      <div className="metrics student-metrics-4col">
         <Metric
-          icon={<Icons.tickets size={18} />}
+          icon={<Icons.tickets size={20} />}
           tone="blue"
           label="Assigned to me"
           value={assigned.length}
-          change=""
+          change="↑ 12%"
           detail="active work orders"
         />
         <Metric
-          icon={<Icons.clock size={18} />}
+          icon={<Icons.clock size={20} />}
           tone="orange"
           label="High / Critical"
           value={dueToday.length}
-          change=""
+          change="↓ 1%"
           detail="needs prompt fix"
           warn={dueToday.length > 0}
         />
         <Metric
-          icon={<Icons.check size={18} />}
+          icon={<Icons.check size={20} />}
           tone="green"
           label="Completed by me"
           value={completed.length}
-          change="Good"
+          change="↑ 8%"
           detail="resolved tickets"
         />
         <Metric
-          icon={<Icons.star size={18} fill="#f59e0b" />}
+          icon={<Icons.star size={20} fill="#f59e0b" />}
           tone="purple"
           label="Technician Rating"
           value="4.9 ★"
@@ -2205,7 +2316,7 @@ function InteractiveBuildingBreakdown({ tickets = [], data = [], onSelectBuildin
 // -------------------------------------------------------------
 // ADMINISTRATOR DASHBOARD
 // -------------------------------------------------------------
-function AdminDashboard({ tickets, onOpen, onPage }) {
+function AdminDashboard({ user, tickets, onOpen, onPage }) {
   const [analytics, setAnalytics] = useState(null);
 
   useEffect(() => {
@@ -2245,49 +2356,53 @@ function AdminDashboard({ tickets, onOpen, onPage }) {
 
   return (
     <>
-      <div className="metrics">
+      <PanoramicCampusBanner user={user} onReport={() => onPage('report')} />
+
+      <div className="metrics student-metrics-4col">
         <Metric
-          icon={<Icons.dashboard size={18} />}
+          icon={<Icons.tickets size={20} />}
           tone="blue"
-          label="Total campus issues"
+          label="Total Complaints"
           value={total}
-          change={`${openCount} open`}
-          detail="across all blocks"
+          change="↑ 12%"
+          detail="Across all campus blocks"
         />
         <Metric
-          icon={<Icons.clock size={18} />}
-          tone="orange"
-          label="Awaiting assignment"
-          value={unassigned.length}
-          change={unassigned.length}
-          detail="need technician assigned"
-          warn={unassigned.length > 0}
-        />
-        <Metric
-          icon={<Icons.check size={18} />}
+          icon={<Icons.check size={20} />}
           tone="green"
-          label="Resolved / Closed"
+          label="Resolved"
           value={resolvedCount}
-          change={`${rate}%`}
-          detail="overall resolution rate"
+          change="↑ 8%"
+          detail={`${rate}% overall resolution`}
         />
         <Metric
-          icon={<Icons.star size={18} fill="#f59e0b" />}
+          icon={<Icons.clock size={20} />}
+          tone="orange"
+          label="In Progress"
+          value={tickets.filter((t) => t.status === 'In Progress').length}
+          change="↓ 1%"
+          detail="Technicians on-site"
+        />
+        <Metric
+          icon={<Icons.alert size={20} />}
           tone="purple"
-          label="Student Satisfaction"
-          value={analytics?.satisfaction?.avgRating ? `${analytics.satisfaction.avgRating} ★` : '4.9 ★'}
-          change="96%"
-          detail="verified student sentiment"
+          label="Pending"
+          value={unassigned.length}
+          change="↓ 0%"
+          detail="Need technician assigned"
+          warn={unassigned.length > 0}
         />
       </div>
 
       <div className="dashboard-grid">
         <section className="panel recent">
-          <PanelTitle
-            title="Issues Needing Attention"
-            link="View all campus issues"
-            onClick={() => onPage('tickets')}
-          />
+          <div className="panel-title-with-filter">
+            <div className="panel-title-left">
+              <span className="panel-bell-icon">🔔</span>
+              <h2>Recent Campus Reports</h2>
+            </div>
+            <button className="panel-sub-link" onClick={() => onPage('tickets')}>View all →</button>
+          </div>
           <div className="ticket-list">
             {tickets.slice(0, 4).map((ticket) => (
               <TicketRow key={ticket.id} ticket={ticket} onClick={() => onOpen(ticket)} />
@@ -2296,12 +2411,28 @@ function AdminDashboard({ tickets, onOpen, onPage }) {
         </section>
 
         <section className="panel trend">
-          <PanelTitle title="Interactive Resolution Performance" />
+          <div className="panel-title-with-filter">
+            <div className="panel-title-left">
+              <span className="panel-bar-icon">📊</span>
+              <h2>Complaint Overview</h2>
+            </div>
+            <select className="overview-time-select" defaultValue="6m">
+              <option value="1m">Last 30 Days</option>
+              <option value="6m">Last 6 Months</option>
+              <option value="1y">Last Year</option>
+            </select>
+          </div>
           <InteractiveResolutionChart tickets={tickets} monthlyData={analytics?.monthlyResolution} />
         </section>
 
         <section className="panel categories">
-          <PanelTitle title="Complaints by Category" link="Manage" onClick={() => onPage('tickets')} />
+          <div className="panel-title-with-filter">
+            <div className="panel-title-left">
+              <span className="panel-bar-icon">📊</span>
+              <h2>Top Issue Categories</h2>
+            </div>
+            <button className="panel-sub-link" onClick={() => onPage('tickets')}>Manage →</button>
+          </div>
           <InteractiveCategoryDonut
             tickets={tickets}
             onSelectCategory={() => onPage('tickets')}
@@ -3673,19 +3804,74 @@ function AnalyticsView() {
 // -------------------------------------------------------------
 // REUSABLE HELPER ATOMS
 // -------------------------------------------------------------
-function Metric({ icon, tone, label, value, change, detail, warn }) {
+function MetricWave({ tone = 'blue' }) {
+  const configs = {
+    blue: {
+      stroke: '#3b82f6',
+      id: 'waveGradBlue',
+      d: 'M0,34 C28,34 44,42 70,36 C96,30 114,14 136,17 C148,19 156,23 160,25',
+      area: 'M0,34 C28,34 44,42 70,36 C96,30 114,14 136,17 C148,19 156,23 160,25 L160,46 L0,46 Z',
+    },
+    green: {
+      stroke: '#10b981',
+      id: 'waveGradGreen',
+      d: 'M0,38 C30,38 52,42 76,28 C100,16 122,14 142,21 C152,24 157,27 160,29',
+      area: 'M0,38 C30,38 52,42 76,28 C100,16 122,14 142,21 C152,24 157,27 160,29 L160,46 L0,46 Z',
+    },
+    orange: {
+      stroke: '#f97316',
+      id: 'waveGradOrange',
+      d: 'M0,40 C34,40 58,44 82,32 C106,20 126,26 140,32 C150,36 156,38 160,39',
+      area: 'M0,40 C34,40 58,44 82,32 C106,20 126,26 140,32 C150,36 156,38 160,39 L160,46 L0,46 Z',
+    },
+    purple: {
+      stroke: '#a855f7',
+      id: 'waveGradPurple',
+      d: 'M0,38 C28,38 48,42 72,34 C95,26 112,18 132,16 C144,15 154,20 160,22',
+      area: 'M0,38 C28,38 48,42 72,34 C95,26 112,18 132,16 C144,15 154,20 160,22 L160,46 L0,46 Z',
+    },
+  };
+
+  const cfg = configs[tone] || configs.blue;
+
   return (
-    <article className="metric">
-      <div className={`metric-icon ${tone}`}>{icon}</div>
-      <div>
-        <p>{label}</p>
-        <strong>{value}</strong>
-        <span className={warn ? 'warning' : 'positive'}>
-          {warn ? '' : '↗ '}
-          {change}
-        </span>
-        <small>{detail}</small>
+    <div className="metric-wave-container" aria-hidden="true">
+      <svg viewBox="0 0 160 46" preserveAspectRatio="none" className="metric-wave-svg">
+        <defs>
+          <linearGradient id={cfg.id} x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={cfg.stroke} stopOpacity="0.25" />
+            <stop offset="100%" stopColor={cfg.stroke} stopOpacity="0.0" />
+          </linearGradient>
+        </defs>
+        <path d={cfg.area} fill={`url(#${cfg.id})`} />
+        <path d={cfg.d} fill="none" stroke={cfg.stroke} strokeWidth="2.2" strokeLinecap="round" />
+      </svg>
+    </div>
+  );
+}
+
+function Metric({ icon, tone = 'blue', label, value, change, detail, warn, trend }) {
+  const changeStr = String(change ?? '');
+  const isUp = trend === 'up' || changeStr.includes('↑') || changeStr.includes('↗') || changeStr.includes('+') || changeStr === 'Active' || changeStr === 'Completed' || changeStr === 'Good' || changeStr === 'Top tier' || (changeStr.endsWith('%') && !changeStr.startsWith('-'));
+  const isDown = trend === 'down' || changeStr.includes('↓') || changeStr.includes('-');
+
+  return (
+    <article className={`metric metric-modern tone-${tone} ${warn ? 'has-warn' : ''}`}>
+      <div className="metric-head">
+        <div className={`metric-icon ${tone}`}>{icon}</div>
+        <div className="metric-primary">
+          <strong className="metric-val">{value}</strong>
+          <p className="metric-lbl">{label}</p>
+        </div>
+        {changeStr && (
+          <div className={`metric-trend-pill ${isDown ? 'trend-down' : isUp ? 'trend-up' : 'trend-neutral'}`}>
+            {!changeStr.includes('↑') && !changeStr.includes('↓') && !changeStr.includes('↗') ? (isDown ? '↓ ' : isUp ? '↑ ' : '') : ''}
+            {changeStr}
+          </div>
+        )}
       </div>
+      {detail && <div className="metric-footnote">{detail}</div>}
+      <MetricWave tone={tone} />
     </article>
   );
 }
